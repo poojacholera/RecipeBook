@@ -1,0 +1,116 @@
+@font-face {
+    font-family: Raphtalia;
+    src: url("../fonts/Raphtalia-2ZmK.ttf");
+    src: url("../fonts/Raphtalia-2ZmK.ttf") format("truetype");
+}
+@font-face {
+    font-family: HemeraIi;
+    src: url("../fonts/HemeraIiDemoRegular-ZY73.ttf");
+    src: url("../fonts/Halfbred-jEEq0.ttf") format("truetype");
+}
+@font-face {
+    font-family: Halfbred;
+    src: url("../fonts/Halfbred-jEEq0.ttf");
+    src: url("../fonts/Halfbred-jEEq0.ttf") format("truetype"),
+        url("../fonts/Halfbred-ALLz6.otf") format("opentype");
+}
+@font-face {
+    font-family: SkinnyThings;
+    src: url("../fonts/skinny-things-font/SkinnyThings-G1dq.ttf");
+    src: url("../fonts/skinny-things-font/SkinnyThings-G1dq.ttf") format("truetype");
+}
+@font-face {
+    font-family: SkinnyThings-Italic;
+    src: url("../fonts/skinny-things-font/SkinnyThingsItalic-gnLR.ttf");
+    src: url("../fonts/skinny-things-font/SkinnyThingsItalic-gnLR.ttf") format("truetype");
+}
+.newsInfo{
+    font-family: "Cantarell", sans-serif;
+    color:  rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.counterDisplayContainer{
+    width:auto;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top:30px;
+
+}
+.cardHeadingContainer{
+    padding-top: 10%;
+    display: flex;
+   /* font-size: xx-large;
+    flex-shrink: inherit;
+    display: flex;
+    flex-grow: 1;*/
+}
+.cardHeadingContainer{
+
+    font-size: large;
+    flex-shrink: inherit;
+    display: flex;
+    flex-grow: 1;
+}
+.cardViews{
+    display: flex;
+    background-color: transparent !important;
+    width: 130px;
+    height: 100px;
+   /* border-radius: 50% !important;*/
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid darkcyan;
+  /*  border: 1px solid rgba(0,0,0,.125);*/
+ /*   border-width: 1px !important;*/
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+.cardBox{
+    margin-top:0px !important;
+    width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ /*   display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;*/
+    border: 1px solid darkcyan;
+line-height: 1.0 !important;
+   /* padding: 2px !important;*/
+
+}
+.digits{
+    /* align-items: center;
+     justify-content: center;
+    padding-left: 10px;
+     */
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    display: flex;
+    font-size: xx-large;
+    flex-grow: 1;
+    flex: auto;
+    font-weight: bold;
+    font-family: SkinnyThings,sans-serif;
+    color:  rgba(0, 0, 0, 0.8);
+}
+.cardLabel{
+    display: flex;
+    flex: auto;
+    font-size: medium;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 !important;
+    border-top:darkcyan !important;
+}

@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  min-height: 95vh;
+  background-image: linear-gradient(to left, #ffecd2 0%, #fcb69f 50%);;
+}
+
+@font-face {
+  font-family: HemeraIi;
+  src: url("../fonts/HemeraIiDemoRegular-ZY73.ttf");
+  src: url("../fonts/Halfbred-jEEq0.ttf") format("truetype");
+}
+
+/*
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+*/
