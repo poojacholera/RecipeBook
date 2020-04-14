@@ -11,7 +11,7 @@ const RecipeView = () => {
     const [query, setQuery] = useState("");
 
     useEffect(() => {
-        getRecipes();
+      //  getRecipes();
     }, [query]);
 
     const getRecipes = async () => {

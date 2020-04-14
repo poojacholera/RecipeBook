@@ -23,7 +23,20 @@ const LineChartContainer = (props) => {
     });
     const getProvinceData = () => {
         let li = getOntarioProvince();
-      console.log(groupBy(li,"province"));
+        const liGroup = groupBy(li,"province");
+      console.log(liGroup);
+        const formatedLi = liGroup.map((i,index) => {
+            console.log("li[index] : " + liGroup[index]["province"]);
+           /* let cases = parseInt(i.cases, 10);
+            // console.log("cases : "+cases);
+            var name = 'province';
+            this[name+'_'+i.province] = [];
+            setCasesData(casesData => [...casesData, cases]);
+            console.log(casesData);*/
+
+
+        });
+        return formatedLi;
     };
 
 
@@ -41,7 +54,7 @@ const LineChartContainer = (props) => {
                 let dateFormatMonth =parseInt(dateFormat.getMonth(),10) +1;
                 let dateFormatDate =parseInt(dateFormat.getDate(),10) +1;
                 //gets last day of the month
-                let dt = new Date(dateFormat.getFullYear(), dateFormat.getMonth() +1, -1);
+                let dt = new Date(dateFormat.getFullYear(), dateFormat.getMonth() +1, 0);
                 let dtMonth =parseInt(dt.getMonth(),10) +1;
                 let dtDate =parseInt(dt.getDate(),10) +1;
                 //console.log("date "+ dateFormatDate+"-"+dateFormatMonth +" -X- "+ dtDate+"-"+dtMonth);
@@ -69,21 +82,10 @@ const LineChartContainer = (props) => {
             });
 //TODO sorting by month (safe-side)
 
+/*const p = li.length;
+    for(k =0; k<=li.length; ++k){
 
-            li.map((i,index) => {
-                console.log("li[index] : " + li[index]["province"]);
-                let cases = parseInt(i.cases, 10);
-                console.log("cases : "+cases);
-                //setCasesData(casesData => [...casesData, cases]);
-              /* li[index].map((j,jindex) => {
-                   let cases = parseInt(j.cases, 10);
-                   console.log("cases : "+cases);
-                   setCasesData(casesData => [...casesData, cases]);
-                   // setCasesData(casesData =>casesData.concat(cases));
-               });*/
-
-            });
-        const today = new Date();
+    }*/const today = new Date();
         let dt = new Date(today.getFullYear(), today.getMonth() +1, -1);
         /*const lastdt = new Date(lastDate).toString();
         setLastDate(lastdt);    */
