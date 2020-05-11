@@ -52,8 +52,8 @@
     display: flex;
     flex-grow: 1;*/
 }
-.cardHeadingContainer{
-
+.cardHeading{
+    padding-top: 2em;
     font-size: large;
     flex-shrink: inherit;
     display: flex;
