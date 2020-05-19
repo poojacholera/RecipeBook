@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/RecipeBook/static/css/main.d6b1e189.chunk.css",
+    "main.js": "/RecipeBook/static/js/main.9ac64956.chunk.js",
+    "main.js.map": "/RecipeBook/static/js/main.9ac64956.chunk.js.map",
+    "runtime~main.js": "/RecipeBook/static/js/runtime~main.3c89a3ed.js",
+    "runtime~main.js.map": "/RecipeBook/static/js/runtime~main.3c89a3ed.js.map",
+    "static/css/2.3a3c2869.chunk.css": "/RecipeBook/static/css/2.3a3c2869.chunk.css",
+    "static/js/2.7d0b4ec1.chunk.js": "/RecipeBook/static/js/2.7d0b4ec1.chunk.js",
+    "static/js/2.7d0b4ec1.chunk.js.map": "/RecipeBook/static/js/2.7d0b4ec1.chunk.js.map",
+    "index.html": "/RecipeBook/index.html",
+    "precache-manifest.635fe35e5fbd51d24111ac85965870e1.js": "/RecipeBook/precache-manifest.635fe35e5fbd51d24111ac85965870e1.js",
+    "service-worker.js": "/RecipeBook/service-worker.js",
+    "static/css/2.3a3c2869.chunk.css.map": "/RecipeBook/static/css/2.3a3c2869.chunk.css.map",
+    "static/css/main.d6b1e189.chunk.css.map": "/RecipeBook/static/css/main.d6b1e189.chunk.css.map",
+    "static/media/navmenu.module.css": "/RecipeBook/static/media/ZilapMagic-vmnRM.b623d62a.ttf",
+    "static/media/App.css": "/RecipeBook/static/media/HemeraIiDemoRegular-ZY73.04146a9d.ttf",
+    "static/media/FruitsAndVeg.module.css": "/RecipeBook/static/media/Raphtalia-2ZmK.f30a0bc9.ttf",
+    "static/media/CoronaInfo.module.css": "/RecipeBook/static/media/SkinnyThingsItalic-gnLR.6e39b2b7.ttf"
+  }
+}
