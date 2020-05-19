@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import styles from "./CSS/CoronaInfo.module.css";
 import Chart from "chart.js";
 import {map} from "react-bootstrap/cjs/ElementChildren";
 import {ListGroup} from "react-bootstrap";

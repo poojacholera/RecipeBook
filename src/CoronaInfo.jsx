@@ -3,6 +3,7 @@ import styles from "./CSS/CoronaInfo.module.css";
 import CountDisplayContainer from "./CountDisplayContainer";
 import LineChartContainer from "./LineChartContainer";
 import Select from '@material-ui/core/Select';
+import CountryChart from "./CountryChart";
 
 
 const CoronaInfo = () => {
@@ -42,16 +43,21 @@ const CoronaInfo = () => {
             });
     };
     const handleCountryChange = (event) => {
+        console.log(selectCountry);
+        //console.log(event.target);
         onCountrySelect(event.target.value).then((res) => {
             setSelectCountry(res[0]);
             getCountByDayOne(res[0].Slug);
         });
     };
     const onCountrySelect = async (c) => {
+        console.log(c);
         const selectedObj = countriesData.filter((i)=>{
-            return i.CountryCode ===  c ;
+           // console.log(i.CountryCode +"==="+  c);
+            return i.CountryCode ==  c ;
         });
         console.log(selectedObj);
+        console.log("-  selected country");
         return selectedObj;
     }
 
@@ -62,8 +68,8 @@ const CoronaInfo = () => {
         console.log(API_DayOne)
         let data = await fetch(API_DayOne)
             .then(res => res.json());
-        setDayOneData([...dayOneData, data]);
-        console.log(data);
+        setDayOneData( data);
+      //  console.log(data);
         // if data is empty ELSE if province is empty
         if(JSON.stringify(data) === '[]' ){
             console.log("province emtpty")
@@ -80,7 +86,14 @@ const CoronaInfo = () => {
      * get List of names of province
      */
     const getProvinceList = (data) => {
-        let unique = [...new Set(data.map(item => item.Province))];
+        let unique = [...new Set(data.map(item => {
+            if(item.Province == ""){
+                return item.Country;
+            }else{
+                return item.Province;
+            }
+
+        }))];
         return unique;
     };
     /*const getProvinceList = (data) => {
@@ -127,7 +140,8 @@ const CoronaInfo = () => {
                     labels={["Cases", "Recovered", "Death"]}
                     />
                 }
-                <LineChartContainer data={dayOneData} provinceNames={provinceList}/>
+                {/*<LineChartContainer data={dayOneData} provinceList={provinceList}/>*/}
+                <CountryChart data={dayOneData} provinceList={provinceList} />
             </div>
             <p>Source: https://www.covid19api.com/</p>
         </div>
