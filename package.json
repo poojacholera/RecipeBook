@@ -1,8 +1,7 @@
 {
-  "name": "recipebook",
+  "name": "MyProjectBook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://poojacholera.github.io/RecipeBook/",
   "dependencies": {
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
@@ -29,8 +28,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [

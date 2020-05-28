@@ -33,14 +33,16 @@ const RecipeView = () => {
     return (
         <div className='CoronaInfo' id="RecipeView">
 
-            <h1 className={styles.AppHeader}>Recipe Book</h1>
+            <h1 className={styles.AppHeader}>Ingredient Search Book</h1>
             <div>
+                <p>Search for recipes that contain the ingredients you want! <br/> Also, Find ingredients by dish</p>
                 <form className={styles.searchForm} onSubmit={getSearch}>
                     <input
                         className={styles.searchBar}
                         type='text'
                         value={search}
                         onChange={updateSearch}
+                        placeholder={'Ingredient Search:'}
                     />
                     <button
                         className={styles.searchButton}

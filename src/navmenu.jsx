@@ -16,9 +16,13 @@ class Navmenu extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav  className="mr-auto">
                             <Nav.Link ><Link className="text-white" exact to='/'>Home</Link></Nav.Link>
-                            <Nav.Link ><Link className="text-white" to='/Recipes'>Recipes</Link></Nav.Link>
+                            <Nav.Link ><Link className="text-white" to='/Recipes'>Ingredient Search</Link></Nav.Link>
                             <Nav.Link ><Link className="text-white" to='/CoronaInfo'>Corona-Info</Link></Nav.Link>
-                            <Nav.Link ><Link className="text-white" to='/FruitsAndVeg'>Know your Food</Link></Nav.Link>
+                            <Nav.Link ><Link className="text-white" to='/VideoChat'>Jitsi Video Chat</Link></Nav.Link>
+                            {/*<Nav.Link ><Link className="text-white" to='/WhereByVideoChat'>WhereBy Video Call</Link></Nav.Link>*/}
+                            {/*<Nav.Link ><Link className="text-white" to='/ZoomVideoChat'>Zoom Video Call</Link></Nav.Link>*/}
+                            <Nav.Link ><Link className="text-white" to='/FruitsAndVeg' >Know your Food</Link></Nav.Link>
+
                            {/* <NavDropdown className="text-white"  className={styles.whiteText}title="Dropdown" id="basic-nav-dropdown">
                                 <NavDropdown.Item className="text-white" href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item className="text-white" href="#action/3.2">Another action</NavDropdown.Item>

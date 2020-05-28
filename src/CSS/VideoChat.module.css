@@ -1,0 +1,10 @@
+.AppHeader {
+    height: 100px;
+    padding: 20px;
+    font-weight: bold;
+    color: antiquewhite;
+    font-family: HemeraIi, serif;
+}
+.frameContainer{
+    margin-top: 10%;
+}

@@ -5,7 +5,7 @@ import LineChartContainer from "./LineChartContainer";
 import Select from '@material-ui/core/Select';
 import CountryChart from "./CountryChart";
 
-
+//TODO Make it mobile friendly (esp. chart)
 const CoronaInfo = () => {
     const [globalData, setGlobalData] = useState([]);
     const [countriesData, setCountriesData] = useState([]);
