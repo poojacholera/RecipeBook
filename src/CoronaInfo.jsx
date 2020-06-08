@@ -100,7 +100,7 @@ const CoronaInfo = () => {
      // const unique = [...new Set(array.map(item => item.age))];
       const uniqueProvinces = [...new Set(data.map(item => item.Province))];
   };*/
-    const countryOptions = countryList..sort(function(a, b){
+    const countryOptions = countryList.sort(function(a, b){
         if(a.Country < b.Country) { return -1; }
         if(a.Country > b.Country) { return 1; }
         return 0;
