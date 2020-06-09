@@ -16,7 +16,8 @@ const jitsiContainerStyle = {
 
 function startConference() {
     try {
-        const domain = 'meet.jit.si';
+        //const domain = 'meet.jit.si';
+        const domain = 'localhost:8080';
         const options = {
             roomName: 'Poojac_Meeting',
             height: 500,

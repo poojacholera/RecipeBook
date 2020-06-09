@@ -1,30 +1,25 @@
 import React, {useEffect, useState} from "react";
 import Chart from "chart.js";
 
-const CountryChart = (props) => {
+const ProvinceChart = (props) => {
     const [lastDate, setLastDate] = useState("");
-    const [province, setProvince] = useState("");
-    const [provinceNames, setProvinceNames] = useState([])
     const [confirmedCasesData, setConfirmedCasesData] = useState([]);
     const [activeCasesData, setActiveCasesData] = useState([]);
     const [deathData, setDeathData] = useState([]);
     const [provinceData, setProvinceData] = useState([]);
 
+console.error("Province.chart....")
+    console.log(props.province);
+    console.log(props.data);
     const chartRef = React.createRef();
-   // console.log(props.data);
-   // console.log(JSON.stringify(props.provinceList) === "[]");//check if empty
-
     useEffect(() => {
 
-            let li = getDataset1();
-        console.log(JSON.stringify(li));
-            loadLineChart(li);
+       let li = getDataset();
+       // console.log(JSON.stringify(li));
+        loadLineChart(li);
     }, [props]);
 
-    const getDataset1 = () => {
-        console.log(props.data);
-        console.log("getData1");
-        //  console.log((JSON.stringify(props.data[0])));
+    const getDataset = () =>{
         const li = props.data
             .filter(i => {
                 //gets today's date and month
@@ -53,8 +48,8 @@ const CountryChart = (props) => {
                 );
             })
             .map( (i) => {
-     //            console.log("cases " + i.Cases+" on date " +i['Date']);
-                setProvince(i.Province);
+                console.log("cases " + i.Cases+" on date " +i['Date']);
+              /*  setProvince(i.Province);*/
                 let month = i["Date"].substr(5, 2);
                 let date = new Date(i["Date"]);
                 console.log("date:" + date);
@@ -70,7 +65,6 @@ const CountryChart = (props) => {
                 setLastDate(i["Date"]);
                 return {
                     country: i.Country,
-                    province: i.Province,
                     date: date,
                     confirmed: cases.confirmed,
                     active: cases.active,
@@ -92,21 +86,22 @@ const CountryChart = (props) => {
             console.log(dt);
             return dt;
         }));
-        let province = [...new Set(li.map(i => {
+        /*let province = [...new Set(li.map(i => {
             if(!i.province==""){
                 return i.province
             }else{
                 return i.country
             }
-        }))];
+        }))];*/
         return  {
             active: active,
             confirmed: confirmed,
             deaths:deaths,
             labels:labels,
-            province:province
+           /* province:province*/
         };
-    };
+    }
+
 
     const loadLineChart = li => {
         console.log(li)
@@ -120,27 +115,31 @@ const CountryChart = (props) => {
 
                 },
                     {
-                    label: 'Deaths',
-                    data: li["deaths"],
-                    backgroundColor: [
-                        'rgba(255, 120, 132, 0.2)',
-                        'rgba(255, 120, 132, 0.2)',
-                        'rgba(255, 120, 132, 0.2)',
-                        'rgba(255, 120, 132, 0.2)',
-                        'rgba(255, 120, 132, 0.2)',
+                        label: 'Deaths',
+                        data: li["deaths"],
+                        backgroundColor: [
+                            'rgba(255, 120, 132, 0.2)',
+                            'rgba(255, 120, 132, 0.2)',
+                            'rgba(255, 120, 132, 0.2)',
+                            'rgba(255, 120, 132, 0.2)',
+                            'rgba(255, 120, 132, 0.2)',
 
-                    ],
-                },
+                        ],
+                    },
                     {
-                    label: 'Confirmed Cases',
-                    data: li["confirmed"],
+                        label: 'Confirmed Cases',
+                        data: li["confirmed"],
 
-                    // Changes this dataset to become a line
-                    type: 'line'
-                }],
+                        // Changes this dataset to become a line
+                        type: 'line'
+                    }],
                 labels: li["labels"]
             },
             options: {
+                title: {
+                    display: true,
+                    text: props.province
+                },
                 responsive: true,
                 scales: {
                     yAxes: [
@@ -161,31 +160,32 @@ const CountryChart = (props) => {
     };
     return (
         <div>
-            <p>
-                <span style={{color: "darkcyan"}}>Last updated on:</span>
-                {lastDate}
-            </p>
+
             <canvas
                 id={"myChart"}
                 ref={chartRef}
                 style={{width: "100vh", height: "80vh"}}
             />
+            <p>
+                <span style={{color: "darkcyan"}}>Last updated on:</span>
+                {lastDate}
+            </p>
             <div>
-
+                <br/>
             </div>
         </div>
     );
-};
-export default CountryChart;
-//
+}
+export default ProvinceChart;
+
 /**
  * @param : Date Object
  * @return string month (MMM/ month)
  * To get month name from Date object
  * */
 const getMonthMMM = (obj) =>{
-  let x = obj.getMonth();
-  const month = ["January", "February","March","April","May","June","July","August","September","October","November","December"]
-  const mon = ["Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
-  return mon[x];
+    let x = obj.getMonth();
+    const month = ["January", "February","March","April","May","June","July","August","September","October","November","December"]
+    const mon = ["Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
+    return mon[x];
 };

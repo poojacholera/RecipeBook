@@ -4,6 +4,7 @@ import CountDisplayContainer from "./CountDisplayContainer";
 import LineChartContainer from "./LineChartContainer";
 import Select from '@material-ui/core/Select';
 import CountryChart from "./CountryChart";
+import ProvinceChart from "./ProvinceChart";
 
 //TODO Make it mobile friendly (esp. chart)
 const CoronaInfo = () => {
@@ -51,13 +52,13 @@ const CoronaInfo = () => {
         });
     };
     const onCountrySelect = async (c) => {
-        console.log(c);
+     //   console.log(c);
         const selectedObj = countriesData.filter((i)=>{
            // console.log(i.CountryCode +"==="+  c);
             return i.CountryCode ==  c ;
         });
-        console.log(selectedObj);
-        console.log("-  selected country");
+       // console.log(selectedObj);
+       // console.log("-  selected country");
         return selectedObj;
     }
 
@@ -65,7 +66,7 @@ const CoronaInfo = () => {
         //fetchData()
         //TODO error check for val
         API_DayOne = `https://api.covid19api.com/dayone/country/${val}`;
-        console.log(API_DayOne)
+     //   console.log(API_DayOne)
         let data = await fetch(API_DayOne)
             .then(res => res.json());
         setDayOneData( data);
@@ -107,6 +108,14 @@ const CoronaInfo = () => {
     }).map(obj =>
             <option value={obj.ISO2} label={obj.Country} >{obj.Country}</option>
         )
+
+    const allProvinceCharts = provinceList.sort(function(a, b){
+        if(a < b) { return -1; }
+        if(a > b) { return 1; }
+        return 0;
+    }).map(obj => <ProvinceChart  province={obj} data={dayOneData.filter(i => { return i.Province === obj})} />);
+let flag = (provinceList === "[]");
+    console.log("flag : "+flag);
     return (
         <div className={styles.newsInfo} id="newsInfo" onLoad={() => getTotalGlobalCount()}>
             <h3 className="text-white-50 align-content-center justify-content-around font-weight-bolder">
@@ -145,7 +154,8 @@ const CoronaInfo = () => {
                     />
                 }
                 {/*<LineChartContainer data={dayOneData} provinceList={provinceList}/>*/}
-                <CountryChart data={dayOneData} provinceList={provinceList} />
+                { flag && <CountryChart data={dayOneData} provinceList={provinceList}/>}
+                {!flag && allProvinceCharts}
             </div>
             <p>Source: https://www.covid19api.com/</p>
         </div>
